@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- React DOM Library-->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- BABEL Library-->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Testimonials with ReactJS</title>
+</head>
+<body>
+    <div id="app">Render is not working</div>
+
+    <script type="text/babel">
+
+        //Testimonials Component
+        var Testimonials = function(props) {
+            //style of testimonial div
+            var testimonialsStyle = {
+                border: "2px solid #ccc",
+                backgroundColor: "#eee",
+                borderRadius: 5,
+                padding: 16,
+                margin: "16px 0"
+            }
+            //style of the image
+            var imageStyle = {
+                float: "left",
+                marginRight: 20,
+                borderRadius: "50%",
+                width: 90
+            }
+            //name style
+            var nameStyle = {
+                fontSize: 20,
+                marginRight: 15
+            }
+            return(
+                <div style={testimonialsStyle}>
+                    <img style={imageStyle} src={props.imageLink}></img> 
+                    <p><span style={nameStyle}>{props.name}</span>{props.jobPosition} at {props.company}</p>
+                    <p>{props.comments}</p>
+                </div>
+
+            );
+        }
+        
+
+
+        ReactDOM.render (
+            <div>
+                <Testimonials name="John Doe" jobPosition="CEO" company="MyCompany" comments="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." imageLink="https://www.w3schools.com/w3images/bandmember.jpg"/>
+
+                <Testimonials name="Test User" jobPosition="Secretary" company="MyCompany" comments="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." imageLink="https://www.w3schools.com/w3images/avatar_g2.jpg"/>
+
+                <Testimonials name="Julia Dolores" jobPosition="CEO" company="MyCompany" comments="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." imageLink="https://www.w3schools.com/howto/img_avatar2.png"/>
+                
+                <Testimonials name="Mary Example" jobPosition="Secretary" company="MyCompany" comments="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." imageLink="https://www.w3schools.com/w3images/avatar_g2.jpg"/>
+
+                <Testimonials name="John Zisakis" jobPosition="Service Desk" company="Netcompany" comments="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." imageLink="https://media.licdn.com/dms/image/C4D03AQHrewx71WDuQQ/profile-displayphoto-shrink_100_100/0/1638015553930?e=1716422400&v=beta&t=g9qyrLqHhSMhmgH-FGPJD1CU1N6KK2RNwOn5y5c6Ync"/>
+            </div>,
+            document.getElementById("app")
+        )
+    </script>
+    
+</body>
+</html>
